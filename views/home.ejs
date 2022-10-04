@@ -6,4 +6,10 @@
   <body>
     <h1>Home</h1>
     <p>Welcome to the home page!</p>
+    <script>
+      const socket = io();
+      socket.on('connection', () => {
+        console.log('Connected to server');
+      });
+      </script>
   </body>
