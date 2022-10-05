@@ -31,7 +31,7 @@ app.use(
 //connect to mongodb
 require("./db");
 app.get("/", (req, res) => {
-  res.send("Server is alive");
+  res.send("Server is alive and awesome");
 });
 
 app.post("/login", async (req, res) => {
