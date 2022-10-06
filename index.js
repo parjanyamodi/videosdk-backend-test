@@ -30,11 +30,11 @@ app.use(
 );
 //connect to mongodb
 require("./db");
-app.get("/", (req, res) => {
+app.get("/api/", (req, res) => {
   res.send("Server is alive and awesome");
 });
 
-app.post("/login", async (req, res) => {
+app.post("/api/login", async (req, res) => {
   try {
     const user = await User.findOne({
       email: req.body.email,
@@ -54,7 +54,7 @@ app.post("/login", async (req, res) => {
     res.send({ status: 500, message: err });
   }
 });
-app.post("/register", async (req, res) => {
+app.post("/api/register", async (req, res) => {
   try {
     var existingUser = await User.findOne({ email: req.body.email });
     console.log(existingUser, req.body);
