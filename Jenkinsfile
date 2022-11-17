@@ -14,12 +14,12 @@ pipeline{
     }
     stage ('Test') {
       steps {
-        sh 'sh setup.sh'
+        echo 'Testing ...'
       }
     }
     stage ('Deploy') {
       steps {
-        sh 'sh update.sh'
+        sh 'ssh -i "/var/www/2022ankercloudkey.pem" ubuntu@13.127.170.126 "sh videosdk.sh"'
       }
     }
   }
