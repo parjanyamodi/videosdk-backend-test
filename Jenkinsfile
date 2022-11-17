@@ -14,12 +14,12 @@ pipeline{
     }
     stage ('Test') {
       steps {
-        echo 'Testing ....'
+        sh 'sh setup.sh'
       }
     }
     stage ('Deploy') {
       steps {
-        sh 'pm2 restart videosdk-backend'
+        sh 'sh update.sh'
       }
     }
   }
